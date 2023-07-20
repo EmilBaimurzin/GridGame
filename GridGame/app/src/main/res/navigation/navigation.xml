@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.grid.game.ui.main.FragmentMain"
+        android:label="FragmentMain" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentGame"
+            app:destination="@id/fragmentGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGame"
+        android:name="com.grid.game.ui.game.FragmentGame"
+        android:label="FragmentGame" >
+        <action
+            android:id="@+id/action_fragmentGame_to_dialogGameOver"
+            app:destination="@id/dialogGameOver" />
+        <action
+            android:id="@+id/action_fragmentGame_to_dialogSettings"
+            app:destination="@id/dialogSettings" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogGameOver"
+        android:name="com.grid.game.ui.dialogs.DialogGameOver"
+        android:label="DialogGameOver" >
+        <argument
+            android:name="scores"
+            app:argType="integer" />
+    </dialog>
+    <dialog
+        android:id="@+id/dialogSettings"
+        android:name="com.grid.game.ui.settings.DialogSettings"
+        android:label="DialogSettings" />
+</navigation>
